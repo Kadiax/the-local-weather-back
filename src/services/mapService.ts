@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { LocationSearch } from "../models/LocationSearch";
+import type { LocationSearch } from "@/models/LocationSearch";
 
 const MAPBOX_API_URL = "https://api.mapbox.com/search/geocode/v6/forward";
 

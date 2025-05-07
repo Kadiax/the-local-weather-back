@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { fetchAllWeatherData, fetchWeather } from "../services/weatherService";
+import { fetchAllWeatherData, fetchWeather } from "@/services/weatherService";
 
 const router = express.Router();
 

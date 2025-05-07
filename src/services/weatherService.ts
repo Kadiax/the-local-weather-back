@@ -3,7 +3,7 @@ import type {
   PolluantData,
   WeatherData,
   ForecastData,
-} from "../models/WeatherData";
+} from "@/models/WeatherData";
 
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 

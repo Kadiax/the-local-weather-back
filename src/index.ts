@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import mapRoutes from "./routes/map";
-import weatherRoutes from "./routes/weather";
+import mapRoutes from "@/routes/map";
+import weatherRoutes from "@/routes/weather";
 
 dotenv.config();
 const app = express();

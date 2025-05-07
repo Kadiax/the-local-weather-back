@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { fetchLocationSearch } from "../services/mapService";
+import { fetchLocationSearch } from "@/services/mapService";
 
 const router = express.Router();
 
