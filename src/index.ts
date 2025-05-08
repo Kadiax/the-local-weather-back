@@ -4,6 +4,7 @@ import cors from "cors";
 import mapRoutes from "@/routes/map";
 import weatherRoutes from "@/routes/weather";
 import { validateEnv } from "@/utils/validateEnv";
+import checkApiKey from "@/middlewares/checkApiKey";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ validateEnv([
   "OPENWEATHERMAP_KEY",
   "OPENWEATHERMAP_BASE_URL",
   "ALLOWED_ORIGINS",
+  "FRONT_SECRET_KEY",
 ]);
 
 const app = express();
@@ -32,6 +34,7 @@ app.use(
 );
 
 app.use(express.json());
+app.use(checkApiKey);
 
 app.use("/api/map", mapRoutes);
 app.use("/api/weather", weatherRoutes);
