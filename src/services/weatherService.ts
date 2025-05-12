@@ -21,7 +21,7 @@ export const fetchWeather = async (
     }
   );
 
-  return response.data as WeatherData;
+  return mapToWeatherData(response.data);
 };
 
 const fetchForecast = async (
@@ -40,7 +40,7 @@ const fetchForecast = async (
     }
   );
 
-  return response.data as ForecastData;
+  return mapToForecastData(response.data);
 };
 
 const fetchAirPollution = async (
@@ -58,7 +58,7 @@ const fetchAirPollution = async (
     }
   );
 
-  return response.data as PolluantData;
+  return mapToPollutionData(response.data);
 };
 
 export const fetchAllWeatherData = async (lat: number, lon: number) => {
@@ -69,4 +69,55 @@ export const fetchAllWeatherData = async (lat: number, lon: number) => {
   ]);
 
   return { weather, forecast, pollution };
+};
+
+const mapToWeatherData = (data: any): WeatherData => {
+  return {
+    dt: data.dt,
+    timezone: data.timezone,
+    main: {
+      temp: data.main.temp,
+      temp_max: data.main.temp_max,
+      temp_min: data.main.temp_min,
+      feels_like: data.main.feels_like,
+      pressure: data.main.pressure,
+      humidity: data.main.humidity,
+    },
+    wind: {
+      speed: data.wind.speed,
+    },
+    weather: data.weather.map((w: any) => ({
+      icon: w.icon,
+      description: w.description,
+    })),
+    sys: {
+      sunrise: data.sys.sunrise,
+      sunset: data.sys.sunset,
+    },
+  };
+};
+
+const mapToForecastData = (data: any): ForecastData => {
+  return {
+    list: data.list.map((item: any) => ({
+      dt: item.dt,
+      main: {
+        temp: item.main.temp,
+      },
+      weather: item.weather.map((w: any) => ({
+        icon: w.icon,
+      })),
+    })),
+  };
+};
+
+const mapToPollutionData = (data: any): PolluantData => {
+  return {
+    list: data.list.map((item: any) => ({
+      main: {
+        aqi: item.main.aqi,
+      },
+      components: item.components,
+    })),
+  };
 };

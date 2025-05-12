@@ -12,5 +12,20 @@ export const fetchLocationSearch = async (
     },
   });
 
-  return response.data as LocationSearch;
+  return mapToLocationSearch(response.data);
+};
+
+const mapToLocationSearch = (data: any): LocationSearch => {
+  return {
+    features: data.features.map((feature: any) => ({
+      id: feature.id,
+      geometry: {
+        type: feature.geometry.type,
+        coordinates: feature.geometry.coordinates,
+      },
+      properties: {
+        full_address: feature.properties.full_address,
+      },
+    })),
+  };
 };

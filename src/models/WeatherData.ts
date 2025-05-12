@@ -4,6 +4,9 @@ export interface WeatherData {
   timezone?: number;
   main?: {
     temp?: number;
+    temp_max?: number;
+    temp_min?: number;
+    feels_like?: number;
     pressure?: number;
     humidity?: number;
   };
@@ -12,6 +15,7 @@ export interface WeatherData {
   };
   weather?: {
     icon?: string;
+    description?: string;
   }[];
   sys?: {
     sunrise?: number;
