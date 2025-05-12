@@ -5,6 +5,7 @@ import mapRoutes from "@/routes/map";
 import weatherRoutes from "@/routes/weather";
 import { validateEnv } from "@/utils/validateEnv";
 import checkApiKey from "@/middlewares/checkApiKey";
+import { rateLimiter } from "@/middlewares/rateLimiter";
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ app.use(
 
 app.use(express.json());
 app.use(checkApiKey);
+app.use(rateLimiter);
 
 app.use("/api/map", mapRoutes);
 app.use("/api/weather", weatherRoutes);
