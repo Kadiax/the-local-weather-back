@@ -20,13 +20,13 @@ app.get("/api/test", (req, res) => {
 });
 
 describe("Rate limiter", () => {
-  it("should block after 20 requests", async () => {
-    for (let i = 0; i < 30; i++) {
+  it("should block after 40 requests", async () => {
+    for (let i = 0; i < 50; i++) {
       const res = await request(app)
         .get("/api/test")
         .set("x-api-key", "test-key");
 
-      if (i < 20) {
+      if (i < 40) {
         expect(res.status).toBe(200);
       } else {
         expect(res.status).toBe(429);
