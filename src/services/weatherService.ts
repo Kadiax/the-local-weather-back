@@ -24,7 +24,7 @@ export const fetchWeather = async (
   return mapToWeatherData(response.data);
 };
 
-const fetchForecast = async (
+export const fetchForecast = async (
   lat: number,
   lon: number
 ): Promise<ForecastData> => {
@@ -43,7 +43,7 @@ const fetchForecast = async (
   return mapToForecastData(response.data);
 };
 
-const fetchAirPollution = async (
+export const fetchAirPollution = async (
   lat: number,
   lon: number
 ): Promise<PolluantData> => {
