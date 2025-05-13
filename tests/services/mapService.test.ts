@@ -1,4 +1,4 @@
-import { fetchLocationSearch } from "../../src/services/mapService";
+import { fetchLocationSearch } from "@/services/mapService";
 import axios from "axios";
 
 jest.mock("axios");
