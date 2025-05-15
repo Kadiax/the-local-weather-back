@@ -1,10 +1,13 @@
 import request from "supertest";
 import express from "express";
-import weatherRoutes from "@/routes/weather";
-import { fetchAllWeatherData, fetchWeather } from "@/services/weatherService";
+import weatherRoutes from "./../../src/routes/weather";
+import {
+  fetchAllWeatherData,
+  fetchWeather,
+} from "./../../src/services/weatherService";
 
 // 1. Mock the entire weatherService
-jest.mock("@/services/weatherService");
+jest.mock("./../../src/services/weatherService");
 
 describe("Weather Routes", () => {
   // 2. Create a minimal Express app for testing

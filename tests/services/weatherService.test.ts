@@ -3,7 +3,7 @@ import {
   fetchForecast,
   fetchAirPollution,
   fetchAllWeatherData,
-} from "@/services/weatherService";
+} from "./../../src/services/weatherService";
 import axios from "axios";
 
 jest.mock("axios");

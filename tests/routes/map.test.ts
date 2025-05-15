@@ -1,10 +1,10 @@
 import request from "supertest";
 import express from "express";
-import mapRoutes from "@/routes/map";
-import { fetchLocationSearch } from "@/services/mapService";
+import mapRoutes from "./../../src/routes/map";
+import { fetchLocationSearch } from "./../../src/services/mapService";
 
 // Mock the entire mapService
-jest.mock("@/services/mapService");
+jest.mock("./../../src/services/mapService");
 
 describe("Map Routes", () => {
   // Create a minimal Express app for testing

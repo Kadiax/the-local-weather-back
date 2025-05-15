@@ -1,8 +1,8 @@
 import request from "supertest";
 import express from "express";
 import rateLimit from "express-rate-limit";
-import checkApiKey from "@/middlewares/checkApiKey";
-import { rateLimiter } from "@/middlewares/rateLimiter";
+import checkApiKey from "./../../src/middlewares/checkApiKey";
+import { rateLimiter } from "./../../src/middlewares/rateLimiter";
 
 // 💡  create an isolated Express app for testing
 const app = express();
