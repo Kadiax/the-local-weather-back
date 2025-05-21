@@ -2,7 +2,7 @@
 
 Backend service for The Local Weather application, providing weather data from multiple sources with built-in security and rate limiting.
 
-🔗 **Live API** : https://the-local-weather-backend.onrender.com
+🔗 **Live API** : https://the-local-weather-back.onrender.com
 
 ## 🛠️ Tech Stack
 
